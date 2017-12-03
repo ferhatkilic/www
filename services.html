@@ -1,0 +1,47 @@
+
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+    <div class="center sliding">Crontab --help</div>
+    <div class="right"><a href="#" data-panel="left" class="link open-panel icon-only"><i class="icon icon-bars"></i></a></div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="services" class="page">
+    <div class="page-content">
+      <div class="content-block">
+	  
+	  
+	  <iframe src="crontabCreate.html">
+  <p>Your browser does not support iframes.</p>
+</iframe>
+
+	  
+	  
+      <p>cron is driven by a crontab, a configuration file that specifies shell commands to run periodically on a given schedule.</p>
+         <h2>crontab syntax</h2>
+         <p><strong class="highlight">Each line in a crontab file is a job</strong> and follows a particular format as a series of fields, separated by spaces or tabs(see example below). Each field can have a single value or a series of values.</p>
+         <h3>crontab Operators</h3>
+         <p>There are multiple ways of specifying several date/time values in a field:</p>
+         <ul>
+           <li>The comma(,) specifies a list of values, for example: &quot;1,3,4,7,8&quot;</li>
+           <li>The dash(-) specifies a range. Example: &quot;1-6&quot;, which is equivalent to &quot;1,2,3,4,5,6&quot;</li>
+           <li>The asterisk(*) operator specifies all possible values for a field. For example, an asterisk in the hour time field would be the same as 'every hour'.</li>
+         </ul>
+         <p>There is also an operator which some extended versions of cron support, the slash(/) operator, which can be used to skip a given number of values. For example, &quot;*/3&quot; in the hour time field is equivalent to &quot;0,3,6,9,12,15,18,21&quot;. So &quot;*&quot; specifies 'every hour' but the &quot;*/3&quot; means only those hours divisible by 3.</p>
+         <p>Example: the following will clear the Apache error log at one minute past midnight each day.</p>
+         <pre><code class="crontab">    01 00 * * * echo &quot;&quot; &gt; /www/apache/logs/error_log</code></pre>
+         <h3>Fields</h3>
+         <pre> .---------------- minute (0 - 59) 
+ |  .------------- hour (0 - 23)
+ |  |  .---------- day of month (1 - 31)
+ |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ... 
+ |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7)  OR sun,mon,tue,wed,thu,fri,sat 
+ |  |  |  |  |
+ *  *  *  *  *  &lt;command to be executed&gt;
+         </pre>
+         <p>For more information about the cron and crontab, run the command <code>man cron</code> and <code>man crontab</code>.</p>
+      </div>
+    </div>
+  </div>
+</div>
